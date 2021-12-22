@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bravo 3allek</title>
+    <style>
+        body{
+            background-color: rgb(0, 117, 117);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .question{
+            font-size: 30px;
+            color: #fff;
+            margin-bottom: 50px;
+        }
+        input{
+            height: 100px;
+            width: 200px;
+            border-radius: 20px;
+            outline: none;
+            border: none;
+            margin-bottom: 30px;
+            color: #f4511e;
+            overflow: hidden;
+            padding: 10px;
+            font-size: 19px;
+        }
+        .btn{
+            background-color: #f4511e;
+            padding: 15px 30px;
+            border: none;
+            font: 20px;
+            text-align: center;
+            color: #fff;
+            transition: .3s;
+            opacity: 0.6;
+        }
+        .btn:hover {
+            opacity: 1;
+        }
+        .dv{
+            position: fixed;
+            bottom: 10px;
+            color: #fff;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+        .mylable{
+            margin-top: 10px;
+            color: #fff;
+            font-size: 20px;    
+        }
+        .bravo{
+            position: fixed;
+            top: 10px;
+            height: 95vh;
+        }
+        .hide{
+            display: none !important;
+        }
+    </style>
+</head>
+<body> 
+    <div class="question">ايه الانجاز اللــي عمــــلـته الـنـهـاردة؟</div>
+    <input placeholder="..اكتب هنا ياعمي يا اعمي" type="text">
+    <button class="btn">submit</button>
+    <div class="dv">Developed by: <em>Mostafa Abbas</em></div>
+    <div class="hide mylable">اكتب يسطا متخمش</div>
+    <video src="vid.mp4" controls class="hide bravo"></video>
+    <script>
+        const bravo = document.querySelector('.bravo');
+        document.querySelector('.btn').addEventListener('click', () => {
+            if (document.querySelector('input').value == '') {
+                document.querySelector('.mylable').classList.remove('hide');
+            }
+            else {
+                document.querySelector('.mylable').classList.add('hide');
+                document.querySelector('input').value = '';
+                bravo.classList.remove('hide');
+                bravo.currentTime = 0;
+                bravo.play();
+            }
+        })
+        bravo.addEventListener('ended', () => {
+            bravo.classList.add('hide');
+        })
+        bravo.addEventListener('pause', () => {
+            bravo.classList.add('hide');
+        })
+    </script>
+    <div id="naptha_container0932014_0707"></div>
+    <grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+</body>
+</html>
